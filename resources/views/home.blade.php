@@ -13,8 +13,12 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    Welcome!  {{ Auth::user()->name }}. 
+                    {{ __('You, are logged in!') }}
 
-                    {{ __('You are logged in!') }}
+                    @if(Auth::user()->user_type == 'admin')
+                        <a href="/admin">Dashboard</a>
+                    @endif
                 </div>
             </div>
         </div>
